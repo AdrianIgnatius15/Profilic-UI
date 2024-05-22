@@ -2,16 +2,18 @@ import { observer } from "mobx-react-lite";
 import { useStore } from "../../stores/contextStore/store.context";
 import { AppBar, Box, Container, IconButton, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import logo from "../../assets/pv-logo.png";
 
 export default observer(function NavBar(): JSX.Element {
     const { accountStore } = useStore();
     const { user } = accountStore;
 
     return (
-        <AppBar position="static">
+        <div className="header">
+            <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <img src="../../assets/pv-logo.png" alt="Petra Central Logo" style={{ width: "10rem" }} />
+                    <img src={logo} alt="Petra Central Logo" style={{ width: "15rem", maxWidth: "15rem", minWidth: "10rem" }} />
 
                     <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                         <IconButton
@@ -37,5 +39,6 @@ export default observer(function NavBar(): JSX.Element {
                 </Toolbar>
             </Container>
         </AppBar>
+        </div>
     );
 })
