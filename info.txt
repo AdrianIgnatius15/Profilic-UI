@@ -1,0 +1,2 @@
+Font on logo is "Halimum"
+Big font on logo is "Noto Serif Display"
