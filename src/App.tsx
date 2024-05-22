@@ -9,7 +9,7 @@ function App() {
         main: colors.pink[300]
       },
       secondary: {
-        main: colors.orange[500]
+        main: colors.blue[400]
       }
     }
   });
