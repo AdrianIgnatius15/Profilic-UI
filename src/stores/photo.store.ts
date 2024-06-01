@@ -1,17 +1,14 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import { PhotoReadDto } from "../models/photo-read-dto.model";
-import HttpService from "../network/http.service";
+import axios from "axios";
 
 export default class PhotoStore {
-    private httpService: HttpService;
-
     photo: PhotoReadDto | null = null;
     photos: PhotoReadDto[] = [];
-    bannerPhotos: PhotoReadDto[] = [];
+    bannerPhotos: PhotoReadDto[] | [] = [];
 
     constructor() {
         makeAutoObservable(this);
-        this.httpService = new HttpService();
     }
 
     get getBannerPhotos() {
@@ -22,16 +19,20 @@ export default class PhotoStore {
         return this.photo;
     }
 
-    public async retrieveBannerPhotos() {
+    retrieveBannerPhotos = async () => {
         try {
-            const bannerPhotos = await this.httpService.getBannerPhotos();
+            const bannerPhotosData = await axios.get<PhotoReadDto[]>(`http://localhost:8080/v1/dev/api/photo/banner/photos`);
+            console.info("Photos", bannerPhotosData?.data);
             runInAction(() => {
-                this.bannerPhotos = bannerPhotos;
+                if (bannerPhotosData && bannerPhotosData?.status === 200 && bannerPhotosData?.data) {
+                    this.bannerPhotos = JSON.parse(JSON.stringify(bannerPhotosData.data));
+                } else {
+                    this.bannerPhotos = [];
+                }
             });
-        } catch (errorCaptured) {
-            const error = errorCaptured as Error;
-            console.info("Error occured while retrieving banner photos", error?.message);
-            return [];
+        } catch (error) {
+            const errorCaptured = error as Error;
+            console.info("Error captured during retrieving all banner photos is", errorCaptured.message);
         }
-    }
+    };
 }
