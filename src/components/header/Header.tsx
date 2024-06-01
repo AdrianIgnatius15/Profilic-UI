@@ -32,7 +32,7 @@ export default observer(function NavBar(): JSX.Element {
 
    return (
       <div className="header">
-         <AppBar variant="outlined" position="static">
+         <AppBar variant="elevation" position="static">
             <Container maxWidth="xl">
                <Toolbar disableGutters>
                   <IconButton
