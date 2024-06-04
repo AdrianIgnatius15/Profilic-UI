@@ -1,2 +1,19 @@
 Font on logo is "Halimum"
 Big font on logo is "Noto Serif Display"
+
+<Carousel animation="slide" autoPlay className="carousel">
+            {bannerPhotos.map((item) => (
+                <CardActionArea key={item.id}>
+                    <Card>
+                        <CardMedia height="160px" alt={item.name} component="img" image={item.photoURL} className="image-carousel" />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                All my hot photos, right here!
+                            </Typography>
+
+                            <Typography variant="body2">My photoshoots from the past, present and future in my all new site</Typography>
+                        </CardContent>
+                    </Card>
+                </CardActionArea>
+            ))}
+        </Carousel>
