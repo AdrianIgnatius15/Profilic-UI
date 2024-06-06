@@ -22,7 +22,7 @@ export default observer(function NavBar(): JSX.Element {
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
-                <Toolbar disableGutters variant="regular">
+                <Toolbar disableGutters variant="dense">
                     <IconButton
                         size="large"
                         edge="start"
