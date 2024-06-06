@@ -1,6 +1,7 @@
 import { ThemeProvider, colors, createTheme } from "@mui/material";
 import "./App.css";
 import Index from "./components/index/Index";
+import Header from "./components/header/Header";
 
 function App() {
     const theme = createTheme({
@@ -9,16 +10,25 @@ function App() {
                 main: colors.pink[300],
             },
             secondary: {
-                main: colors.blue[400],
+                main: colors.pink[50],
+            },
+        },
+        components: {
+            MuiDrawer: {
+                styleOverrides: {
+                    paper: {
+                        backgroundColor: colors.pink[300],
+                        color: colors.pink[50],
+                    },
+                },
             },
         },
     });
 
     return (
         <ThemeProvider theme={theme}>
-            <div>
-                <Index />
-            </div>
+            <Header />
+            <Index />
         </ThemeProvider>
     );
 }
