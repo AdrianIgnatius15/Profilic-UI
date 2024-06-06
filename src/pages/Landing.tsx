@@ -3,6 +3,7 @@ import { useStore } from "../stores/contextStore/store.context";
 import { useEffect } from "react";
 import { Container } from "@mui/material";
 import CarouselComponent from "../components/carousel/CarouselComponent";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 
 export default observer(function Landing(): JSX.Element {
     const { photoStore } = useStore();
@@ -15,18 +16,22 @@ export default observer(function Landing(): JSX.Element {
     }, [photoStore, bannerPhotos.length]);
 
     return (
-        <Container
-            maxWidth="xl"
-            component="div"
-            sx={{
-                display: "flex",
-                height: "700px",
-                width: "100%",
-                maxWidth: "800px",
-                my: 2,
-            }}
-        >
-            <CarouselComponent photos={bannerPhotos} />
-        </Container>
+        <Grid2 container>
+            <Grid2 xl={12} md={12} sm={12} xs={12}>
+                <Container
+                    maxWidth="xl"
+                    component="div"
+                    sx={{
+                        display: "flex",
+                        height: "700px",
+                        width: "100%",
+                        maxWidth: "100%",
+                        my: 2,
+                    }}
+                >
+                    <CarouselComponent photos={bannerPhotos} />
+                </Container>
+            </Grid2>
+        </Grid2>
     );
 });
