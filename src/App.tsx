@@ -2,6 +2,7 @@ import { ThemeProvider, colors, createTheme } from "@mui/material";
 import "./App.css";
 import Index from "./components/index/Index";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 function App() {
     const theme = createTheme({
@@ -29,6 +30,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <Header />
             <Index />
+            <Footer />
         </ThemeProvider>
     );
 }

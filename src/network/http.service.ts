@@ -3,6 +3,8 @@ import { Login } from "../models/login.model";
 import { UserReadDTO } from "../models/user-read-dto.model";
 import { UserCreateDTO } from "../models/user-create-dto.model";
 import { PhotoReadDto } from "../models/photo-read-dto.model";
+import { CarouselCaptions } from "../models/carouselCaptions";
+import {} from "../../public/assets/carousel-caption.json";
 
 export default class HttpService {
     public async loginUser(creds: Login) {
@@ -51,5 +53,11 @@ export default class HttpService {
             console.info("Error captured during retrieving all banner photos is", errorCaptured.message);
             return [];
         }
+    }
+
+    public async getCarouselCaptions() {
+        const carouselCaptions = await axios.get<CarouselCaptions[]>("../assets/carousel-caption.json");
+
+        return carouselCaptions?.data ? carouselCaptions.data : [];
     }
 }
