@@ -14,7 +14,7 @@ export default class HttpService {
             return user && user?.status === 200 && user?.data ? user.data : null;
         } catch (error) {
             const errorCaptured = error as Error;
-            console.info("Error captured during login is", errorCaptured.message);
+            console.info("Error captured during login due to", errorCaptured.message);
             return null;
         }
     }
@@ -26,7 +26,7 @@ export default class HttpService {
             return user && user?.status === 200 && user?.data ? user.data : null;
         } catch (error) {
             const errorCaptured = error as Error;
-            console.info("Error captured during register is", errorCaptured.message);
+            console.info("Error captured during register due to", errorCaptured.message);
             return null;
         }
     }
@@ -38,7 +38,7 @@ export default class HttpService {
             return photos && photos?.status === 200 && photos?.data ? photos.data : [];
         } catch (error) {
             const errorCaptured = error as Error;
-            console.info("Error captured during retrieving all photos is", errorCaptured.message);
+            console.info("Error captured during retrieving all photos due to", errorCaptured.message);
             return [];
         }
     }
@@ -50,7 +50,7 @@ export default class HttpService {
             return photos && photos?.status === 200 && photos?.data ? photos.data : [];
         } catch (error) {
             const errorCaptured = error as Error;
-            console.info("Error captured during retrieving all banner photos is", errorCaptured.message);
+            console.info("Error captured during retrieving all banner photos due to", errorCaptured.message);
             return [];
         }
     }
@@ -59,5 +59,41 @@ export default class HttpService {
         const carouselCaptions = await axios.get<CarouselCaptions[]>("../assets/carousel-caption.json");
 
         return carouselCaptions?.data ? carouselCaptions.data : [];
+    }
+
+    public async getNumberOfPhotosAvailable() {
+        try {
+            const numberOfPhotosApiCall = await axios.get<number>(`${BASE_URL_API_DEV}/number-of-photos`);
+
+            return numberOfPhotosApiCall && numberOfPhotosApiCall?.status === 200 && numberOfPhotosApiCall?.data ? numberOfPhotosApiCall.data : 0;
+        } catch (error) {
+            const errorCaptured = error as Error;
+            console.info("Error captured during retrieving number of photos due to", errorCaptured.message);
+            return 0;
+        }
+    }
+
+    public async getNumberOfAlbumsAvailable() {
+        try {
+            const numberOfAlbumsApiCall = await axios.get<number>(`${BASE_URL_API_DEV}/number-of-albums`);
+
+            return numberOfAlbumsApiCall && numberOfAlbumsApiCall?.status === 200 && numberOfAlbumsApiCall?.data ? numberOfAlbumsApiCall.data : 0;
+        } catch (error) {
+            const errorCaptured = error as Error;
+            console.info("Error captured during retrieving number of albums due to", errorCaptured.message);
+            return 0;
+        }
+    }
+
+    public async getNumberOfVideosAvailable() {
+        try {
+            const numberOfVideosApiCall = await axios.get<number>(`${BASE_URL_API_DEV}/number-of-videos`);
+
+            return numberOfVideosApiCall && numberOfVideosApiCall?.status === 200 && numberOfVideosApiCall?.data ? numberOfVideosApiCall.data : 0;
+        } catch (error) {
+            const errorCaptured = error as Error;
+            console.info("Error captured during retrieving number of videos due to", errorCaptured.message);
+            return 0;
+        }
     }
 }
