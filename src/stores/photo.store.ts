@@ -6,6 +6,7 @@ export default class PhotoStore {
     photo: PhotoReadDto | null = null;
     photos: PhotoReadDto[] = [];
     bannerPhotos: PhotoReadDto[] | [] = [];
+    numberOfPhotosAvailable: number = 0;
 
     constructor() {
         makeAutoObservable(this);
@@ -17,6 +18,10 @@ export default class PhotoStore {
 
     get getPhoto() {
         return this.photo;
+    }
+
+    get getNumberOfPhotos() {
+        return this.numberOfPhotosAvailable;
     }
 
     retrieveBannerPhotos = async () => {
@@ -33,6 +38,21 @@ export default class PhotoStore {
         } catch (error) {
             const errorCaptured = error as Error;
             console.info("Error captured during retrieving all banner photos is", errorCaptured.message);
+        }
+    };
+
+    retrieveNumberOfPhotosAvailable = async () => {
+        try {
+            const numberOfPhotosApiCall = await axios.get<number>(`${BASE_URL_API_DEV}/number-of-photos`);
+
+            runInAction(() => {
+                if (numberOfPhotosApiCall && numberOfPhotosApiCall?.status === 200 && numberOfPhotosApiCall?.data) {
+                    this.numberOfPhotosAvailable = numberOfPhotosApiCall.data;
+                }
+            });
+        } catch (error) {
+            const errorCaptured = error as Error;
+            console.info("Error captured during retrieving number of photos due to", errorCaptured.message);
         }
     };
 }
