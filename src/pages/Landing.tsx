@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { useStore } from "../stores/contextStore/store.context";
 import { useEffect } from "react";
-import { Card, CardContent, Container, Typography } from "@mui/material";
+import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import CarouselComponent from "../components/carousel/CarouselComponent";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 
@@ -34,6 +34,7 @@ export default observer(function Landing(): JSX.Element {
                 <Container
                     maxWidth={false}
                     component="div"
+                    disableGutters
                     sx={{
                         display: "flex",
                         height: "750px",
@@ -46,8 +47,8 @@ export default observer(function Landing(): JSX.Element {
                 </Container>
             </Grid2>
 
-            <Grid2 spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                <Grid2 xs={2} sm={4} md={4}>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid2 container xs={2} sm={4} md={8} lg={12}>
                     <Card sx={{ maxWidth: 275 }} variant="elevation">
                         <CardContent>
                             <Typography variant="h4" component="div">
@@ -78,7 +79,7 @@ export default observer(function Landing(): JSX.Element {
                         </CardContent>
                     </Card>
                 </Grid2>
-            </Grid2>
+            </Box>
         </Grid2>
     );
 });
