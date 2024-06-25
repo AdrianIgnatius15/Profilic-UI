@@ -6,28 +6,33 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 export default function Footer(): JSX.Element {
     return (
         <div>
-            <Divider variant="middle" />
-            <Grid2 xl={12} rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }} container>
-                <Grid2 xs={6}>
-                    <Box ml={2}>
-                        <Typography variant="body1" color="secondary">
-                            © {new Date().getFullYear()} PetraCentral.com
-                        </Typography>
-                    </Box>
-                </Grid2>
+            <Divider variant="middle" sx={{ color: "primary", my: 2 }}>
+                REACH OUT TO ME
+            </Divider>
 
-                <Grid2 xs={6} display={"flex"} justifyContent={"end"}>
-                    <Box mr={2}>
-                        <IconButton size="small" color="secondary">
-                            <InstagramIcon />
-                        </IconButton>
+            <Box component={"div"} sx={{ bgcolor: "primary.main", py: 1 }}>
+                <Grid2 xl={12} rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }} container>
+                    <Grid2 xs={6}>
+                        <Box ml={2}>
+                            <Typography variant="body1" color="secondary">
+                                © {new Date().getFullYear()} PetraCentral.com
+                            </Typography>
+                        </Box>
+                    </Grid2>
 
-                        <IconButton size="small" color="secondary">
-                            <FacebookIcon />
-                        </IconButton>
-                    </Box>
+                    <Grid2 xs={6} display={"flex"} justifyContent={"end"}>
+                        <Box mr={2}>
+                            <IconButton size="small" color="secondary">
+                                <InstagramIcon />
+                            </IconButton>
+
+                            <IconButton size="small" color="secondary">
+                                <FacebookIcon />
+                            </IconButton>
+                        </Box>
+                    </Grid2>
                 </Grid2>
-            </Grid2>
+            </Box>
         </div>
     );
 }
