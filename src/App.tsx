@@ -13,6 +13,7 @@ function App() {
             secondary: {
                 main: colors.pink[50],
             },
+            divider: colors.brown["A100"],
         },
         components: {
             MuiDrawer: {
