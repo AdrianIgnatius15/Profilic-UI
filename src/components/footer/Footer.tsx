@@ -11,7 +11,7 @@ export default function Footer(): JSX.Element {
             </Divider>
 
             <Box component={"div"} sx={{ bgcolor: "primary.main", marginBottom: 0 }}>
-                <Grid2 xl={12} rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }} container>
+                <Grid2 rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }} container>
                     <Grid2 xs={6}>
                         <Box ml={2}>
                             <Typography variant="body1" color="secondary">
