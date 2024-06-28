@@ -43,7 +43,7 @@ export default class PhotoStore {
 
     retrieveNumberOfPhotosAvailable = async () => {
         try {
-            const numberOfPhotosApiCall = await axios.get<number>(`${BASE_URL_API_DEV}/number-of-photos`);
+            const numberOfPhotosApiCall = await axios.get<number>(`http://localhost:8080/v1/dev/api/photo/count/number-of-photos`);
 
             runInAction(() => {
                 if (numberOfPhotosApiCall && numberOfPhotosApiCall?.status === 200 && numberOfPhotosApiCall?.data) {

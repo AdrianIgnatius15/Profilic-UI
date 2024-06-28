@@ -14,7 +14,7 @@ export default class AlbumStore {
 
     retrieveNumberOfAlbumsAvailable = async () => {
         try {
-            const numberOfAlbumsApiCall = await axios.get<number>(`${BASE_URL_API_DEV}/number-of-albums`);
+            const numberOfAlbumsApiCall = await axios.get<number>(`http://localhost:8080/v1/dev/api/album/count/number-of-albums`);
 
             if (numberOfAlbumsApiCall && numberOfAlbumsApiCall?.status === 200 && numberOfAlbumsApiCall?.data) {
                 runInAction(() => {

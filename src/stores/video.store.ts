@@ -14,7 +14,7 @@ export default class VideoStore {
 
     retrieveNumberOfVideosAvailable = async () => {
         try {
-            const numberOfVideosApiCall = await axios.get<number>(`${BASE_URL_API_DEV}/number-of-videos`);
+            const numberOfVideosApiCall = await axios.get<number>(`http://localhost:8080/v1/dev/api/video/count/number-of-videos`);
 
             if (numberOfVideosApiCall && numberOfVideosApiCall?.status === 200 && numberOfVideosApiCall?.data) {
                 runInAction(() => {
