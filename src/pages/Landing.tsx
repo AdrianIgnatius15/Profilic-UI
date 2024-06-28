@@ -1,13 +1,20 @@
 import { observer } from "mobx-react-lite";
 import { useStore } from "../stores/contextStore/store.context";
 import { useEffect } from "react";
-import { Card, CardContent, Container, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Container, Typography } from "@mui/material";
 import CarouselComponent from "../components/carousel/CarouselComponent";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 
 export default observer(function Landing(): JSX.Element {
     const { photoStore, carouselCaptionStore } = useStore();
-    const { bannerPhotos, numberOfPhotosAvailable, retrieveBannerPhotos, retrieveNumberOfPhotosAvailable } = photoStore;
+    const {
+        bannerPhotos,
+        cardBackgroundPhotos,
+        numberOfPhotosAvailable,
+        retrieveBannerPhotos,
+        retrieveNumberOfPhotosAvailable,
+        retrieveCardBackgroundPhotos,
+    } = photoStore;
     const { carouselCaptions, getCarouselCaptions } = carouselCaptionStore;
 
     useEffect(() => {
@@ -15,6 +22,12 @@ export default observer(function Landing(): JSX.Element {
             retrieveBannerPhotos();
         }
     }, [photoStore, bannerPhotos.length]);
+
+    useEffect(() => {
+        if (cardBackgroundPhotos.length === 0) {
+            retrieveCardBackgroundPhotos();
+        }
+    }, [photoStore, cardBackgroundPhotos.length]);
 
     useEffect(() => {
         if (carouselCaptions.length === 0) {
@@ -51,6 +64,7 @@ export default observer(function Landing(): JSX.Element {
                 <Grid2 container spacing={8} direction="row" alignItems="center" justifyContent="center" xs={2} sm={4} md={8} lg={12}>
                     <Grid2 xs={2} sm={4} md={8} lg={12}>
                         <Card sx={{ width: 300 }} variant="elevation">
+                            <CardMedia component="img" alt="card image background" height={200} image={`${cardBackgroundPhotos[31].photoURL}`} />
                             <CardContent>
                                 <Typography variant="h4" component="div">
                                     {numberOfPhotosAvailable} photos
@@ -61,6 +75,7 @@ export default observer(function Landing(): JSX.Element {
                     </Grid2>
                     <Grid2 xs={2} sm={4} md={8} lg={12}>
                         <Card sx={{ width: 300 }} variant="elevation">
+                            <CardMedia component="img" alt="card image background" height={200} image={`${cardBackgroundPhotos[9].photoURL}`} />
                             <CardContent>
                                 <Typography variant="h4" component="div">
                                     {numberOfPhotosAvailable} videos
@@ -71,6 +86,7 @@ export default observer(function Landing(): JSX.Element {
                     </Grid2>
                     <Grid2 xs={2} sm={4} md={8} lg={12}>
                         <Card sx={{ width: 300 }} variant="elevation">
+                            <CardMedia component="img" alt="card image background" height={200} image={`${cardBackgroundPhotos[24].photoURL}`} />
                             <CardContent>
                                 <Typography variant="h4" component="div">
                                     {numberOfPhotosAvailable} albums
