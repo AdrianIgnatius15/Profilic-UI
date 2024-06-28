@@ -53,10 +53,9 @@ export default observer(function Landing(): JSX.Element {
                         <Card sx={{ width: 300 }} variant="elevation">
                             <CardContent>
                                 <Typography variant="h4" component="div">
-                                    {numberOfPhotosAvailable}
-                                    photos
+                                    {numberOfPhotosAvailable} photos
                                 </Typography>
-                                <Typography>photos made available</Typography>
+                                <Typography>photos made available to delight</Typography>
                             </CardContent>
                         </Card>
                     </Grid2>
@@ -64,10 +63,9 @@ export default observer(function Landing(): JSX.Element {
                         <Card sx={{ width: 300 }} variant="elevation">
                             <CardContent>
                                 <Typography variant="h4" component="div">
-                                    {numberOfPhotosAvailable}
-                                    videos
+                                    {numberOfPhotosAvailable} videos
                                 </Typography>
-                                <Typography>videos made available</Typography>
+                                <Typography>videos made available indulge</Typography>
                             </CardContent>
                         </Card>
                     </Grid2>
@@ -75,10 +73,9 @@ export default observer(function Landing(): JSX.Element {
                         <Card sx={{ width: 300 }} variant="elevation">
                             <CardContent>
                                 <Typography variant="h4" component="div">
-                                    {numberOfPhotosAvailable}
-                                    albums
+                                    {numberOfPhotosAvailable} albums
                                 </Typography>
-                                <Typography>albums made available</Typography>
+                                <Typography>albums made available enjoy</Typography>
                             </CardContent>
                         </Card>
                     </Grid2>
