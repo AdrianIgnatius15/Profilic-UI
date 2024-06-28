@@ -5,6 +5,7 @@ import axios from "axios";
 export default class PhotoStore {
     photo: PhotoReadDto | null = null;
     photos: PhotoReadDto[] = [];
+    cardBackgroundPhotos: PhotoReadDto[] = [];
     bannerPhotos: PhotoReadDto[] | [] = [];
     numberOfPhotosAvailable: number = 0;
 
@@ -48,6 +49,21 @@ export default class PhotoStore {
             runInAction(() => {
                 if (numberOfPhotosApiCall && numberOfPhotosApiCall?.status === 200 && numberOfPhotosApiCall?.data) {
                     this.numberOfPhotosAvailable = numberOfPhotosApiCall.data;
+                }
+            });
+        } catch (error) {
+            const errorCaptured = error as Error;
+            console.info("Error captured during retrieving number of photos due to", errorCaptured.message);
+        }
+    };
+
+    retrieveCardBackgroundPhotos = async () => {
+        try {
+            const numberOfPhotosApiCall = await axios.get<PhotoReadDto[]>(`http://localhost:8080/v1/dev/api/photo/card/background-images`);
+
+            runInAction(() => {
+                if (numberOfPhotosApiCall && numberOfPhotosApiCall?.status === 200 && numberOfPhotosApiCall?.data) {
+                    this.cardBackgroundPhotos = numberOfPhotosApiCall.data;
                 }
             });
         } catch (error) {
