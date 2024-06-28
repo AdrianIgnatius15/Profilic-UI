@@ -20,7 +20,7 @@ export default function CarouselComponent(props: Readonly<CarouselProps>): JSX.E
                         key={photo.id}
                     >
                         <Grid2 container xs={12} sm={12} md={12} xl={12}>
-                            <img src={photo.photoURL} alt={photo.name} style={{ width: "100%", objectFit: "cover" }} />
+                            <img src={photo.photoURL} alt={photo.name} style={{ width: "100%", objectFit: "cover", pointerEvents: "none" }} />
 
                             <Box
                                 sx={{

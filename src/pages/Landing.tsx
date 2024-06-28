@@ -64,7 +64,13 @@ export default observer(function Landing(): JSX.Element {
                 <Grid2 container spacing={8} direction="row" alignItems="center" justifyContent="center" xs={2} sm={4} md={8} lg={12}>
                     <Grid2 xs={2} sm={4} md={8} lg={12}>
                         <Card sx={{ width: 300 }} variant="elevation">
-                            <CardMedia component="img" alt="card image background" height={200} image={`${cardBackgroundPhotos[31].photoURL}`} />
+                            <CardMedia
+                                component="img"
+                                sx={{ pointerEvents: "none" }}
+                                alt="card image background"
+                                height={200}
+                                image={`${cardBackgroundPhotos[31].photoURL}`}
+                            />
                             <CardContent>
                                 <Typography variant="h4" component="div">
                                     {numberOfPhotosAvailable} photos
@@ -75,7 +81,13 @@ export default observer(function Landing(): JSX.Element {
                     </Grid2>
                     <Grid2 xs={2} sm={4} md={8} lg={12}>
                         <Card sx={{ width: 300 }} variant="elevation">
-                            <CardMedia component="img" alt="card image background" height={200} image={`${cardBackgroundPhotos[9].photoURL}`} />
+                            <CardMedia
+                                component="img"
+                                alt="card image background"
+                                sx={{ pointerEvents: "none" }}
+                                height={200}
+                                image={`${cardBackgroundPhotos[9].photoURL}`}
+                            />
                             <CardContent>
                                 <Typography variant="h4" component="div">
                                     {numberOfPhotosAvailable} videos
@@ -86,7 +98,13 @@ export default observer(function Landing(): JSX.Element {
                     </Grid2>
                     <Grid2 xs={2} sm={4} md={8} lg={12}>
                         <Card sx={{ width: 300 }} variant="elevation">
-                            <CardMedia component="img" alt="card image background" height={200} image={`${cardBackgroundPhotos[24].photoURL}`} />
+                            <CardMedia
+                                component="img"
+                                alt="card image background"
+                                sx={{ pointerEvents: "none" }}
+                                height={200}
+                                image={`${cardBackgroundPhotos[19].photoURL}`}
+                            />
                             <CardContent>
                                 <Typography variant="h4" component="div">
                                     {numberOfPhotosAvailable} albums
