@@ -1,5 +1,6 @@
 import { ThemeProvider, colors, createTheme } from "@mui/material";
 import "./App.css";
+import "../public/fonts/fonts.css";
 import Index from "./components/index/Index";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -14,6 +15,14 @@ function App() {
                 main: colors.pink[50],
             },
             divider: colors.brown["A100"],
+        },
+        typography: {
+            fontFamily: [
+                "Noto Serif Display Condensed Regular",
+                "Noto Serif Display Condensed Medium",
+                "Noto Serif Display Condensed Italic",
+                "Noto Serif Display Condensed Bold",
+            ].join(","),
         },
         components: {
             MuiDrawer: {
