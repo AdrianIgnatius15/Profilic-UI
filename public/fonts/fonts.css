@@ -1,0 +1,331 @@
+@font-face {
+    font-family: "Noto Serif Display Condensed Bold Italic";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-BoldItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-BoldItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-BoldItalic.woff2") format("woff2"), url("../fonts/woff/NotoSerifDisplay-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Extra Bold";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ExtraBold.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ExtraBold.eot") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-ExtraBold.woff2") format("woff2"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-ExtraBold.woff2") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Bold";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Bold.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-Bold.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Extra Bold Italic";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ExtraBoldItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-ExtraBoldItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-ExtraBoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Black Italic";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-BlackItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-BlackItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-BlackItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Black";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Black.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Black.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-Black.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Italic";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Italic.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Italic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-Italic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Extra Light Italic";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ExtraLightItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ExtraLightItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-ExtraLightItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-ExtraLightItalic.woff") format("woff");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Extra Light";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ExtraLight.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ExtraLight.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-ExtraLight.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-ExtraLight.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Medium";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Medium.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Medium.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-Medium.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Light Italic";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-LightItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-LightItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-LightItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Regular";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Regular.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-Regular.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Light";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Light.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Light.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-Light.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Medium Italic";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-MediumItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-MediumItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-MediumItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Thin";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Thin.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-Thin.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-Thin.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Thin Italic";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ThinItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-ThinItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-ThinItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-ThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Semi Bold";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-SemiBold.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-SemiBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-SemiBold.woff2") format("woff2"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Condensed Semi Bold Italic";
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-SemiBoldItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplayCondensed-SemiBoldItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplayCondensed-SemiBoldItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplayCondensed-SemiBoldItalic.woff") format("woff");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Extra Light";
+    src: url("../fonts/eot/NotoSerifDisplay-ExtraLight.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-ExtraLight.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-ExtraLight.woff2") format("woff2"), url("../fonts/woff/NotoSerifDisplay-ExtraLight.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Medium";
+    src: url("../fonts/eot/NotoSerifDisplay-Medium.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-Medium.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-Medium.woff2") format("woff2"), url("../fonts/woff/NotoSerifDisplay-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Light";
+    src: url("../fonts/eot/NotoSerifDisplay-Light.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-Light.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-Light.woff2") format("woff2"), url("../fonts/woff/NotoSerifDisplay-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Regular";
+    src: url("../fonts/eot/NotoSerifDisplay-Regular.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-Regular.woff2") format("woff2"), url("../fonts/woff/NotoSerifDisplay-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Thin";
+    src: url("../fonts/eot/NotoSerifDisplay-Thin.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-Thin.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-Thin.woff2") format("woff2"), url("../fonts/woff/NotoSerifDisplay-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Black Italic";
+    src: url("../fonts/eot/NotoSerifDisplay-BlackItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-BlackItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-BlackItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplay-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Extra Bold Italic";
+    src: url("../fonts/eot/NotoSerifDisplay-ExtraBoldItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-ExtraBoldItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplay-ExtraBoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Bold Italic";
+    src: url("../fonts/eot/NotoSerifDisplay-BoldItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-BoldItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-BoldItalic.woff2") format("woff2"), url("../fonts/woff/NotoSerifDisplay-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Extra Light Italic";
+    src: url("../fonts/eot/NotoSerifDisplay-ExtraLightItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-ExtraLightItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-ExtraLightItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplay-ExtraLightItalic.woff") format("woff");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Italic";
+    src: url("../fonts/eot/NotoSerifDisplay-Italic.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-Italic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-Italic.woff2") format("woff2"), url("../fonts/woff/NotoSerifDisplay-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Thin Italic";
+    src: url("../fonts/eot/NotoSerifDisplay-ThinItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-ThinItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-ThinItalic.woff2") format("woff2"), url("../fonts/woff/NotoSerifDisplay-ThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Light Italic";
+    src: url("../fonts/eot/NotoSerifDisplay-LightItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-LightItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-LightItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplay-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif Display Medium Italic";
+    src: url("../fonts/eot/NotoSerifDisplay-MediumItalic.eot");
+    src: url("../fonts/eot/NotoSerifDisplay-MediumItalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/woff2/NotoSerifDisplay-MediumItalic.woff2") format("woff2"),
+        url("../fonts/woff/NotoSerifDisplay-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
