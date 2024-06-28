@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { useStore } from "../stores/contextStore/store.context";
 import { useEffect } from "react";
-import { Box, Card, CardContent, Container, Typography } from "@mui/material";
+import { Card, CardContent, Container, Typography } from "@mui/material";
 import CarouselComponent from "../components/carousel/CarouselComponent";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 
@@ -40,46 +40,50 @@ export default observer(function Landing(): JSX.Element {
                         height: "750px",
                         width: "100%",
                         maxWidth: "100%",
-                        my: 0.25,
+                        my: 0.05,
                     }}
                 >
                     <CarouselComponent photos={bannerPhotos} carouselCaptions={carouselCaptions} />
                 </Container>
             </Grid2>
 
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid2 container xs={2} sm={4} md={8} lg={12}>
-                    <Card sx={{ maxWidth: 275 }} variant="elevation">
-                        <CardContent>
-                            <Typography variant="h4" component="div">
-                                {numberOfPhotosAvailable}
-                                photos
-                            </Typography>
-                            <Typography>photos made available</Typography>
-                        </CardContent>
-                    </Card>
-
-                    <Card sx={{ maxWidth: 275 }} variant="elevation">
-                        <CardContent>
-                            <Typography variant="h4" component="div">
-                                {numberOfPhotosAvailable}
-                                videos
-                            </Typography>
-                            <Typography>videos made available</Typography>
-                        </CardContent>
-                    </Card>
-
-                    <Card sx={{ maxWidth: 275 }} variant="elevation">
-                        <CardContent>
-                            <Typography variant="h4" component="div">
-                                {numberOfPhotosAvailable}
-                                albums
-                            </Typography>
-                            <Typography>albums made available</Typography>
-                        </CardContent>
-                    </Card>
+            <Grid2 sx={{ flexGrow: 1, my: 5 }}>
+                <Grid2 container spacing={8} direction="row" alignItems="center" justifyContent="center" xs={2} sm={4} md={8} lg={12}>
+                    <Grid2 xs={2} sm={4} md={8} lg={12}>
+                        <Card sx={{ width: 300 }} variant="elevation">
+                            <CardContent>
+                                <Typography variant="h4" component="div">
+                                    {numberOfPhotosAvailable}
+                                    photos
+                                </Typography>
+                                <Typography>photos made available</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid2>
+                    <Grid2 xs={2} sm={4} md={8} lg={12}>
+                        <Card sx={{ width: 300 }} variant="elevation">
+                            <CardContent>
+                                <Typography variant="h4" component="div">
+                                    {numberOfPhotosAvailable}
+                                    videos
+                                </Typography>
+                                <Typography>videos made available</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid2>
+                    <Grid2 xs={2} sm={4} md={8} lg={12}>
+                        <Card sx={{ width: 300 }} variant="elevation">
+                            <CardContent>
+                                <Typography variant="h4" component="div">
+                                    {numberOfPhotosAvailable}
+                                    albums
+                                </Typography>
+                                <Typography>albums made available</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid2>
                 </Grid2>
-            </Box>
+            </Grid2>
         </Grid2>
     );
 });

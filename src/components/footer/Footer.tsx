@@ -5,12 +5,12 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 
 export default function Footer(): JSX.Element {
     return (
-        <div>
-            <Divider variant="middle" sx={{ color: "primary", my: 2 }}>
+        <>
+            <Divider variant="middle" sx={{ color: "primary", marginBottom: 5 }}>
                 REACH OUT TO ME
             </Divider>
 
-            <Box component={"div"} sx={{ bgcolor: "primary.main", py: 1 }}>
+            <Box component={"div"} sx={{ bgcolor: "primary.main", marginBottom: 0 }}>
                 <Grid2 xl={12} rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }} container>
                     <Grid2 xs={6}>
                         <Box ml={2}>
@@ -33,6 +33,6 @@ export default function Footer(): JSX.Element {
                     </Grid2>
                 </Grid2>
             </Box>
-        </div>
+        </>
     );
 }
