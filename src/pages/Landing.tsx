@@ -4,9 +4,10 @@ import { useEffect } from "react";
 import { Card, CardContent, CardMedia, Container, Typography } from "@mui/material";
 import CarouselComponent from "../components/carousel/CarouselComponent";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import CardMediaComponent from "../components/cards/card-media-component";
 
 export default observer(function Landing(): JSX.Element {
-    const { photoStore, carouselCaptionStore } = useStore();
+    const { photoStore, carouselCaptionStore, videoStore } = useStore();
     const {
         bannerPhotos,
         cardBackgroundPhotos,
@@ -15,6 +16,7 @@ export default observer(function Landing(): JSX.Element {
         retrieveNumberOfPhotosAvailable,
         retrieveCardBackgroundPhotos,
     } = photoStore;
+    const { sampleVideoForCard, numberOfVideosAvailable, retrieveNumberOfVideosAvailable, getVideoSampleForCard } = videoStore;
     const { carouselCaptions, getCarouselCaptions } = carouselCaptionStore;
 
     useEffect(() => {
@@ -30,6 +32,12 @@ export default observer(function Landing(): JSX.Element {
     }, [photoStore, cardBackgroundPhotos.length]);
 
     useEffect(() => {
+        if (sampleVideoForCard === null) {
+            getVideoSampleForCard();
+        }
+    }, [videoStore, sampleVideoForCard !== null]);
+
+    useEffect(() => {
         if (carouselCaptions.length === 0) {
             getCarouselCaptions();
         }
@@ -40,6 +48,12 @@ export default observer(function Landing(): JSX.Element {
             retrieveNumberOfPhotosAvailable();
         }
     }, [photoStore, numberOfPhotosAvailable !== 0]);
+
+    useEffect(() => {
+        if (numberOfVideosAvailable === 0) {
+            retrieveNumberOfVideosAvailable();
+        }
+    }, [videoStore, numberOfVideosAvailable !== 0]);
 
     return (
         <Grid2 container width={"100%"}>
@@ -62,54 +76,33 @@ export default observer(function Landing(): JSX.Element {
 
             <Grid2 sx={{ flexGrow: 1, my: 5 }}>
                 <Grid2 container spacing={8} direction="row" alignItems="center" justifyContent="center" xs={2} sm={4} md={8} lg={12}>
+                    {cardBackgroundPhotos.length > 0 && (
+                        <Grid2 xs={2} sm={4} md={8} lg={12}>
+                            <CardMediaComponent
+                                component="img"
+                                sx={{ pointerEvents: "none" }}
+                                height={175}
+                                imageURL={cardBackgroundPhotos[31].photoURL}
+                                description={`${numberOfPhotosAvailable} photos`}
+                                descriptionSubtitle="photos made available to delight"
+                            />
+                        </Grid2>
+                    )}
+
                     <Grid2 xs={2} sm={4} md={8} lg={12}>
                         <Card sx={{ width: 300 }} variant="elevation">
                             <CardMedia
-                                component="img"
-                                sx={{ pointerEvents: "none" }}
-                                alt="card image background"
-                                height={200}
-                                image={`${cardBackgroundPhotos[31].photoURL}`}
+                                component="video"
+                                height={170.5}
+                                image={sampleVideoForCard?.videoURL}
+                                autoPlay
+                                about={sampleVideoForCard?.description}
                             />
                             <CardContent>
                                 <Typography variant="h4" component="div">
-                                    {numberOfPhotosAvailable} photos
-                                </Typography>
-                                <Typography>photos made available to delight</Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid2>
-                    <Grid2 xs={2} sm={4} md={8} lg={12}>
-                        <Card sx={{ width: 300 }} variant="elevation">
-                            <CardMedia
-                                component="img"
-                                alt="card image background"
-                                sx={{ pointerEvents: "none" }}
-                                height={200}
-                                image={`${cardBackgroundPhotos[9].photoURL}`}
-                            />
-                            <CardContent>
-                                <Typography variant="h4" component="div">
-                                    {numberOfPhotosAvailable} videos
+                                    {numberOfVideosAvailable} videos
                                 </Typography>
                                 <Typography>videos made available indulge</Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid2>
-                    <Grid2 xs={2} sm={4} md={8} lg={12}>
-                        <Card sx={{ width: 300 }} variant="elevation">
-                            <CardMedia
-                                component="img"
-                                alt="card image background"
-                                sx={{ pointerEvents: "none" }}
-                                height={200}
-                                image={`${cardBackgroundPhotos[19].photoURL}`}
-                            />
-                            <CardContent>
-                                <Typography variant="h4" component="div">
-                                    {numberOfPhotosAvailable} albums
-                                </Typography>
-                                <Typography>albums made available enjoy</Typography>
                             </CardContent>
                         </Card>
                     </Grid2>
