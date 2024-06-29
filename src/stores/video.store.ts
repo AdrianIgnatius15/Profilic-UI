@@ -1,8 +1,10 @@
 import axios from "axios";
 import { makeAutoObservable, runInAction } from "mobx";
+import { VideoReadDto } from "../models/video-read-dto";
 
 export default class VideoStore {
     numberOfVideosAvailable: number = 0;
+    sampleVideoForCard: VideoReadDto | null = null;
 
     constructor() {
         makeAutoObservable(this);
@@ -24,6 +26,21 @@ export default class VideoStore {
         } catch (error) {
             const errorCaptured = error as Error;
             console.info("Error captured during retrieving number of videos due to", errorCaptured.message);
+        }
+    };
+
+    getVideoSampleForCard = async () => {
+        try {
+            const sampleVideo = await axios.get<VideoReadDto>(`http://localhost:8080/v1/dev/api/video/cards/sample-videos`);
+
+            if (sampleVideo && sampleVideo.status === 200 && sampleVideo.data) {
+                runInAction(() => {
+                    this.sampleVideoForCard = sampleVideo.data;
+                });
+            }
+        } catch (error) {
+            const errorCaptured = error as Error;
+            console.info("Error captured during retrieving of sample videos for cards due to", errorCaptured.message);
         }
     };
 }
