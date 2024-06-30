@@ -27,7 +27,7 @@ export default function CardMediaComponent(props: Readonly<CardMediaProps>): JSX
         case "video":
             return (
                 <Card sx={{ width: 300 }} variant="elevation">
-                    <CardMedia component="video" sx={{ pointerEvents: "none" }} height={props.height} src={props.videoURL} />
+                    <CardMedia component="video" sx={{ pointerEvents: "none" }} height={props.height} image={props.videoURL} autoPlay loop />
                     {props.description !== "" && props.descriptionSubtitle !== "" && (
                         <CardContent>
                             <Typography variant="h4" component="div">
