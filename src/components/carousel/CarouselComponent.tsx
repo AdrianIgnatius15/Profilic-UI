@@ -1,7 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { CarouselProps } from "./carousel.props";
 import Carousel from "react-material-ui-carousel";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import TextViewComponent from "../textviews/textview.component";
 
 export default function CarouselComponent(props: Readonly<CarouselProps>): JSX.Element {
     return (
@@ -34,9 +35,7 @@ export default function CarouselComponent(props: Readonly<CarouselProps>): JSX.E
                                     alignItems: "flex-start",
                                 }}
                             >
-                                <Typography color="white" component="h2" variant="inherit">
-                                    {photo.name}
-                                </Typography>
+                                <TextViewComponent text={photo.name} component="h4" color="white" />
                             </Box>
                         </Grid2>
                     </Box>
