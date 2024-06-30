@@ -35,7 +35,7 @@ export default function CarouselComponent(props: Readonly<CarouselProps>): JSX.E
                                     alignItems: "flex-start",
                                 }}
                             >
-                                <TextViewComponent text={photo.name} component="h4" color="white" />
+                                <TextViewComponent text={photo.name} component="h5" color="white" />
                             </Box>
                         </Grid2>
                     </Box>
