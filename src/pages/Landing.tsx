@@ -8,7 +8,7 @@ import CardMediaComponent from "../components/cards/card-media-component";
 import DividerComponent from "../components/divider/divider-component";
 
 export default observer(function Landing(): JSX.Element {
-    const { photoStore, carouselCaptionStore, videoStore } = useStore();
+    const { photoStore, carouselCaptionStore, videoStore, albumStore } = useStore();
     const {
         bannerPhotos,
         cardBackgroundPhotos,
@@ -18,6 +18,7 @@ export default observer(function Landing(): JSX.Element {
         retrieveCardBackgroundPhotos,
     } = photoStore;
     const { sampleVideoForCard, numberOfVideosAvailable, retrieveNumberOfVideosAvailable, getVideoSampleForCard } = videoStore;
+    const { numberOfAlbumsAvailable, retrieveNumberOfAlbumsAvailable } = albumStore;
     const { carouselCaptions, getCarouselCaptions } = carouselCaptionStore;
 
     useEffect(() => {
@@ -56,6 +57,12 @@ export default observer(function Landing(): JSX.Element {
         }
     }, [videoStore, numberOfVideosAvailable !== 0]);
 
+    useEffect(() => {
+        if (numberOfAlbumsAvailable === 0) {
+            retrieveNumberOfAlbumsAvailable();
+        }
+    }, [albumStore, numberOfAlbumsAvailable !== 0]);
+
     return (
         <Grid2 width={"100%"}>
             <Grid2 xl={12} md={12} sm={12} xs={12}>
@@ -88,6 +95,19 @@ export default observer(function Landing(): JSX.Element {
                                 imageURL={cardBackgroundPhotos[31].photoURL}
                                 description={`${numberOfPhotosAvailable} photos`}
                                 descriptionSubtitle="photos made available to delight"
+                            />
+                        </Grid2>
+                    )}
+
+                    {cardBackgroundPhotos.length > 0 && (
+                        <Grid2 xs={2} sm={4} md={8} lg={12}>
+                            <CardMediaComponent
+                                component="img"
+                                sx={{ pointerEvents: "none" }}
+                                height={200}
+                                imageURL={cardBackgroundPhotos[27].photoURL}
+                                description={`${numberOfAlbumsAvailable} albums`}
+                                descriptionSubtitle="Made available to enjoy"
                             />
                         </Grid2>
                     )}
