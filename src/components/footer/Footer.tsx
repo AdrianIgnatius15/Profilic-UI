@@ -1,14 +1,13 @@
-import { Box, Divider, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import DividerComponent from "../divider/divider-component";
 
 export default function Footer(): JSX.Element {
     return (
         <>
-            <Divider variant="middle" sx={{ color: "primary", marginBottom: 5 }}>
-                REACH OUT TO ME
-            </Divider>
+            <DividerComponent orientation="middle" sx={{ color: "primary.main", marginBottom: 5 }} textOnDivider="REACH OUT TO ME" />
 
             <Box component={"div"} sx={{ bgcolor: "primary.main", marginBottom: 0 }}>
                 <Grid2 rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }} container>
