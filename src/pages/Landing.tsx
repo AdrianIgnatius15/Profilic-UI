@@ -105,7 +105,7 @@ export default observer(function Landing(): JSX.Element {
                                 component="img"
                                 sx={{ pointerEvents: "none" }}
                                 height={200}
-                                imageURL={cardBackgroundPhotos[27].photoURL}
+                                imageURL={cardBackgroundPhotos[25].photoURL}
                                 description={`${numberOfAlbumsAvailable} albums`}
                                 descriptionSubtitle="Made available to enjoy"
                             />
