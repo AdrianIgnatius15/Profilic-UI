@@ -1,11 +1,12 @@
 import { observer } from "mobx-react-lite";
 import { useStore } from "../stores/contextStore/store.context";
 import { useEffect } from "react";
-import { Card, Container } from "@mui/material";
+import { Card, Container, ImageList, ImageListItem } from "@mui/material";
 import CarouselComponent from "../components/carousel/CarouselComponent";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import CardMediaComponent from "../components/cards/card-media-component";
 import DividerComponent from "../components/divider/divider-component";
+import TextViewComponent from "../components/textviews/textview.component";
 
 export default observer(function Landing(): JSX.Element {
     const { photoStore, carouselCaptionStore, videoStore, albumStore } = useStore();
@@ -18,7 +19,7 @@ export default observer(function Landing(): JSX.Element {
         retrieveCardBackgroundPhotos,
     } = photoStore;
     const { sampleVideoForCard, numberOfVideosAvailable, retrieveNumberOfVideosAvailable, getVideoSampleForCard } = videoStore;
-    const { numberOfAlbumsAvailable, retrieveNumberOfAlbumsAvailable } = albumStore;
+    const { numberOfAlbumsAvailable, albumImageLists, retrieveNumberOfAlbumsAvailable, getPhotosForImageList } = albumStore;
     const { carouselCaptions, getCarouselCaptions } = carouselCaptionStore;
 
     useEffect(() => {
@@ -63,6 +64,12 @@ export default observer(function Landing(): JSX.Element {
         }
     }, [albumStore, numberOfAlbumsAvailable !== 0]);
 
+    useEffect(() => {
+        if (albumImageLists.length === 0) {
+            getPhotosForImageList();
+        }
+    }, [albumStore, albumImageLists.length]);
+
     return (
         <Grid2 width={"100%"}>
             <Grid2 xl={12} md={12} sm={12} xs={12}>
@@ -94,7 +101,7 @@ export default observer(function Landing(): JSX.Element {
                                 height={200}
                                 imageURL={cardBackgroundPhotos[31].photoURL}
                                 description={`${numberOfPhotosAvailable} photos`}
-                                descriptionSubtitle="photos made available to delight"
+                                descriptionSubtitle="Made available to delight"
                             />
                         </Grid2>
                     )}
@@ -123,6 +130,39 @@ export default observer(function Landing(): JSX.Element {
                                 descriptionSubtitle="Made available to indulge"
                             />
                         </Card>
+                    </Grid2>
+                </Grid2>
+            </Grid2>
+
+            <DividerComponent orientation="middle" sx={{ color: "secondary.main", my: 2 }} textOnDivider="Know About Me" />
+
+            <Grid2 sx={{ flexGrow: 1, my: 5 }}>
+                <Grid2 container spacing={8} direction="row" alignItems="center" justifyContent="center" xs={2} sm={4} md={8} lg={12}>
+                    <Grid2 xs={2} sm={4} md={8} lg={12}>
+                        <TextViewComponent text="Generally speaking..." variant="h6" component="h6" color="secondary.main" />
+                        <TextViewComponent
+                            text="I was Playboy’s Miss December 1989 in the US, Playboy’s Model of the Year 1997, and I’ve appeared in over 100 Playboy publications internationally."
+                            color="secondary.main"
+                            component="body1"
+                            variant="body1"
+                        />
+                    </Grid2>
+
+                    <Grid2 container spacing={8} direction="row" alignItems="center" justifyContent="center" xs={2} sm={4} md={8} lg={12}>
+                        <Container disableGutters>
+                            <ImageList variant="masonry" cols={4} gap={8}>
+                                {albumImageLists.map((image) => (
+                                    <ImageListItem key={image.id} cols={2} rows={1} sx={{ pointerEvents: "none" }}>
+                                        <img
+                                            srcSet={`${image.photoURL}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                            src={`${image.photoURL}?w=248&fit=crop&auto=format`}
+                                            alt={image.name}
+                                            loading="lazy"
+                                        />
+                                    </ImageListItem>
+                                ))}
+                            </ImageList>
+                        </Container>
                     </Grid2>
                 </Grid2>
             </Grid2>
