@@ -14,7 +14,7 @@ export default function Footer(): JSX.Element {
                     <Grid2 xs={6}>
                         <Box ml={2}>
                             <Typography variant="body1" color="secondary">
-                                © {new Date().getFullYear()} PetraCentral.com
+                                © {new Date().getFullYear()} Petra Verkaik. All Rights Reserved.
                             </Typography>
                         </Box>
                     </Grid2>
